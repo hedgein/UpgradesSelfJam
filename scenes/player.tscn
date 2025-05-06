@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbcp6b8tgmwv3"]
+
+[ext_resource type="Script" uid="uid://btmydq0in7887" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dsthbjvayee7o" path="res://icon.svg" id="2_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="SpawnNorth" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(1, -47)
+
+[node name="SpawnEast" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(47, -1)
+
+[node name="SpawnSouth" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(0, 48)
+
+[node name="SpawnWest" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(-49, -1)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx26wmv6m5c1j"]
+
+[ext_resource type="Script" uid="uid://blpe0tnsbjnqi" path="res://scenes/bread.gd" id="1_16yqp"]
+[ext_resource type="Texture2D" uid="uid://dsthbjvayee7o" path="res://icon.svg" id="1_svkq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svkq2"]
+size = Vector2(14, 13)
+
+[node name="Bread" type="CharacterBody2D"]
+script = ExtResource("1_16yqp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_svkq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_svkq2")
